@@ -1,0 +1,17 @@
+# macOS Finder metadata
+.DS_Store
+
+# Python cache and bytecode files
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE and editor files
+.vscode/
+
+# Log files
+*.log
+
+# Virtual environment
+venv/
+.venv
