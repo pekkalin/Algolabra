@@ -21,4 +21,8 @@
 
 [1] https://dl.acm.org/doi/10.5555/2832249.2832300
 
+run tests:
+     pytest -s unit_test.py
+     pytest -s perf_test.py
+
 
