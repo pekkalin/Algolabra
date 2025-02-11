@@ -20,9 +20,10 @@ Structure:
 2. `_unit_propagate`: Simplifies the formula using unit clauses.
 3. `_pure_literal_elimination`: Simplifies the formula by assigning pure literals.
 4. `_simplify_clauses`: Updates the formula after a variable assignment.
-5. `_dpll`: Implements the recursive DPLL algorithm with backtracking.
-6. `solve`: Entry point for solving the SAT problem. Returns whether the formula 
-   is satisfiable and, if so, the satisfying assignment.
+5. `_choose_branching_variable`: Chooses the next variable to branch on using the MOM heuristic.
+6. `_dpll`: Implements the recursive DPLL algorithm with backtracking.
+7. `solve`: Entry point for solving the SAT problem. Returns whether the formula 
+    is satisfiable and, if so, the satisfying assignment.
 
 Author: Pekka Linna
 Email: pekka.j.linna@helsinki.fi
@@ -176,13 +177,6 @@ class SATSolver:
 
         if any(len(c) == 0 for c in self.clauses):
             return False
-
-        # Choose branching variable easy way. Could be improved..
-        # unassigned = [l for clause in self.clauses for l in clause if abs(l) not in self.assignments]
-        # if not unassigned:
-        #    return False
-
-        # var = abs(unassigned[0])
         
         # # Choose branching variable using MOM heuristic
         var = self._choose_branching_variable()

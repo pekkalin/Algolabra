@@ -81,7 +81,14 @@ def main() -> None:
     print(f"Reading DIMACS file: {filename}")
     
     solver = SATSolver(read_file_and_create_clauses(filename))
-    solver.solve()
+    sat, solution = solver.solve()
+    
+    if sat:
+         print("Satisfiable! Solution:")
+         for var, value in sorted(solution.items()):
+             print(f"{var} = {value}")
+    else:
+         print("Unatisfiable.")
     
 if __name__ == "__main__":
    main()
