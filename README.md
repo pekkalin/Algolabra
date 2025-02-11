@@ -25,12 +25,6 @@ Suorita ohjelma:
 Esimerkki:
 - DIMACS-syötetiedosto (example.cnf):
 
-c Esimerkkitiedosto SAT-ratkaisijalle
-p cnf 3 3
-1 -3 0
--1 2 3 0
--2 -3 0
-
 - poetry run python main.py example.cnf
 
     Reading DIMACS file: example.cnf
