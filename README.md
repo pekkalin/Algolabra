@@ -1,6 +1,6 @@
-Algolabra harjoitustyö, kevät 2025.
-Toteuttaja: Pekka Linna
-Email:      pekka.j.linna@helsinki.fi
+Algolabra harjoitustyö, kevät 2025.  
+Toteuttaja: Pekka Linna  
+Email:      pekka.j.linna@helsinki.fi  
 
 
 SAT-solveri DPLL-algoritmilla.
@@ -27,16 +27,16 @@ Esimerkki:
 
 - poetry run python main.py example.cnf
 
-    Reading DIMACS file: example.cnf
+    Reading DIMACS file: example.cnf  
     Satisfiable. Solution:
 
-    -3 = True
-    1 = False
-    2 = True
+    -3 = True  
+    1 = False  
+    2 = True  
 
-Suorita testit:
-cd test
-     Yksikkötestit:
+Suorita testit:  
+cd test  
+     Yksikkötestit:  
      - poetry run pytest -s unit_test.py
 
      Suorituskykytestit testisetti kerrallan:
