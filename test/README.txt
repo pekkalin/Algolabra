@@ -22,7 +22,14 @@
 [1] https://dl.acm.org/doi/10.5555/2832249.2832300
 
 run tests:
-     pytest -s unit_test.py
-     pytest -s perf_test.py
+     Unit Tests:
+     poetry run pytest -s unit_test.py
+
+     Performance Tests:
+     poetry run pytest -s perf_100_420_test.py
+     poetry run pytest -s perf_100_428_test.py
+     poetry run pytest -s perf_100_429_test.py
+     poetry run pytest -s perf_100_450_test.py
+     poetry run pytest -s perf_100_480_test.py
 
 

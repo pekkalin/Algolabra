@@ -10,8 +10,11 @@ The DIMACS format consists of:
 - 'p' lines indicating problem type and size
 - Clauses represented as lists of integers where each integer represents a literal.
 
+ Author: Pekka Linna
+ Email: pekka.j.linna@helsinki.fi
+
 Usage:
-    python satsolver.py <DIMACS-file-name>
+    poetry run python satsolver.py <DIMACS-file-name>
 
 Where <DIMACS-file-name> is the path to the DIMACS file that contains the SAT problem.
 """
@@ -65,9 +68,6 @@ def main() -> None:
     - Reads the file and creates the list of clauses using the `read_file_and_create_clauses` function.
     - Uses the `SATSolver` to attempt to solve the SAT problem.
     - Prints the result: either the satisfying assignment or a message saying the formula is unsatisfiable.
-
-    Author: Pekka Linna
-    Email: pekka.j.linna@helsinki.fi
     
     Usage:
     - The file name is passed as a command-line argument when running the script.

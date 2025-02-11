@@ -9,15 +9,10 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from satsolver import SATSolver
 
 
-@pytest.mark.parametrize("load_cnf_files", ["perf-tests/random-3-cnf-100-420",
-                                            "perf-tests/random-3-cnf-100-428",
-                                            "perf-tests/random-3-cnf-100-429",
-                                            "perf-tests/random-3-cnf-100-450",
-                                            "perf-tests/random-3-cnf-100-480"],
-                                             indirect=True)
+@pytest.mark.parametrize("load_cnf_files", ["perf-tests/random-3-cnf-100-450"],indirect=True)
 class TestPerf:
     def test_dpll_performance(self, load_cnf_files):
-        print("Executing testset:")
+        print("Executing testset n=100, m=450:")
         for i, filename in enumerate(load_cnf_files.keys(), 1):
             print(f"{i}. {filename}")
         
