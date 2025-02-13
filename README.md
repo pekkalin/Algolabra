@@ -37,7 +37,8 @@ Esimerkki:
 Suorita testit:  
 cd test  
      Yksikkötestit:  
-     - poetry run pytest -s unit_test.py
+     - poetry run pytest -s sat_unit_test.py
+     - poetry run pytest -s unsat_unit_test.py
 
      Suorituskykytestit testisetti kerrallan:
      - poetry run pytest -s perf_100_420_test.py

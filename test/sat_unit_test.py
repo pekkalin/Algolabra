@@ -9,11 +9,11 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from satsolver import SATSolver
 
 
-@pytest.mark.parametrize("load_cnf_files", ["unit-tests"], indirect=True)
-class TestUnit:
-     unsat_cases = ["sat5.cnf" ]
-     def test_dpll_performance(self, load_cnf_files):
-        print("Executing testset:")
+@pytest.mark.parametrize("load_cnf_files", ["unit-tests/sat"], indirect=True)
+class TestUnitSAT:
+     def test_dpll_sat(self, load_cnf_files):
+        print("Executing satisfiable testset:")
+        print("Executing SAT unit tests")
         for i, filename in enumerate(load_cnf_files.keys(), 1):
             print(f"{i}. {filename}")
         
@@ -25,17 +25,14 @@ class TestUnit:
             solver = SATSolver(clauses)
             start_time = time.time()
             sat, sol = solver.solve()
-            if filename in self.unsat_cases:
-                assert sat == False
-            else:
-                assert sat == True
             end_time = time.time()
             execution_time = end_time - start_time
             print(f"Satisfiable: {sat}, Execution time for {filename}: {execution_time} seconds")
             print()
+            assert sat, f"Test failed: {filename} is UNSATISFIABLE but expected SATISFIABLE"
             total_time += execution_time
 
         average_time = total_time / num_of_tests
         print()
-        print(f"Average execution time for testset: {average_time} seconds")
+        print(f"Average execution time for satisfiable testset: {average_time} seconds")
         

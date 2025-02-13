@@ -23,7 +23,8 @@
 
 run tests:
      Unit Tests:
-     poetry run pytest -s unit_test.py
+     - poetry run pytest -s sat_unit_test.py
+     - poetry run pytest -s unsat_unit_test.py
 
      Performance Tests:
      poetry run pytest -s perf_100_420_test.py
