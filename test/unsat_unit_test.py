@@ -26,7 +26,7 @@ class TestUnitUNSAT:
             sat, sol = solver.solve()
             end_time = time.time()
             execution_time = end_time - start_time
-            print(f"Satisfiable: {sat}, Execution time for {filename}: {execution_time} seconds")
+            print(f"{'Satisfiable' if sat else 'Unsatisfiable'}, execution time for {filename}: {execution_time:.11f} seconds")
             print()
             assert not sat, f"Test failed: {filename} is SATISFIABLE but expected UNSATISFIABLE"
             total_time += execution_time

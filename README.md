@@ -1,28 +1,27 @@
-Algolabra harjoitustyö, kevät 2025.  
-Toteuttaja: Pekka Linna  
+Algolabra project, Spring 2025.  
+Developer: Pekka Linna  
 Email:      pekka.j.linna@helsinki.fi  
 
+SAT Solver using the DPLL Algorithm  
 
-SAT-solveri DPLL-algoritmilla.
+The program implements a simple SAT solver (Boolean satisfiability solver) based on the DPLL (Davis-Putnam-Logemann-Loveland) algorithm.  
+The program reads a DIMACS file in conjunctive normal form (CNF) and returns a satisfying truth assignment or indicates that no such assignment exists.  
 
-Ohjelma toteuttaa yksinkertaisen SAT-solverin (Boolean satisfiability solver), joka perustuu DPLL (Davis-Putnam-Logemann-Loveland) -algoritmiin.
-Ohjelma lukee DIMACS-tiedoston, joka on konjuktiivisessa normaalimuodossa ja palauttaa sen toteuttavan totuusjakauman tai tiedon siitää, ettei tällaista jakaumaa ole olemassa.
+Installation:  
 
-Asennus:
+Clone the repository:   
+- https://github.com/pekkalin/Algolabra.git  
 
-Kloonaa repository: 
-- https://github.com/pekkalin/Algolabra.git
-
-Asenna riippuvuudet: 
+Install dependencies: 
 - poetry install --no-root
 
-Varmista, että Poetryn virtuaaliympäristö on käytössä: 
+Ensure that the Poetry virtual environment is active:   
 - poetry shell
 
-Suorita ohjelma:
+Run the program:  
 - poetry run python main.py <DIMACS-tiedosto>
 
-Esimerkki:
+Example:  
 - DIMACS-syötetiedosto (example.cnf):
 
 - poetry run python main.py example.cnf
@@ -34,21 +33,22 @@ Esimerkki:
     1 = False  
     2 = True  
 
-Suorita testit:  
+Run tests:  
 cd test  
-     Yksikkötestit:  
+     Unit tests:  
      - poetry run pytest -s sat_unit_test.py
      - poetry run pytest -s unsat_unit_test.py
 
-     Suorituskykytestit testisetti kerrallan:
+     Performance tests, one test set at a time:  
      - poetry run pytest -s perf_100_420_test.py
      - poetry run pytest -s perf_100_428_test.py
      - poetry run pytest -s perf_100_429_test.py
      - poetry run pytest -s perf_100_450_test.py
      - poetry run pytest -s perf_100_480_test.py
 
-    Kaikki testit kerralla:
-    - poetry run pytest -s
+    All tests at once:  
+    - poetry run pytest -s  
+    
 
 
 

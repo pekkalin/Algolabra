@@ -13,7 +13,6 @@ from satsolver import SATSolver
 class TestUnitSAT:
      def test_dpll_sat(self, load_cnf_files):
         print("Executing satisfiable testset:")
-        print("Executing SAT unit tests")
         for i, filename in enumerate(load_cnf_files.keys(), 1):
             print(f"{i}. {filename}")
         
@@ -27,12 +26,12 @@ class TestUnitSAT:
             sat, sol = solver.solve()
             end_time = time.time()
             execution_time = end_time - start_time
-            print(f"Satisfiable: {sat}, Execution time for {filename}: {execution_time} seconds")
+            print(f"{'Satisfiable' if sat else 'Unsatisfiable'}, execution time for {filename}: {execution_time:.11f} seconds")
             print()
             assert sat, f"Test failed: {filename} is UNSATISFIABLE but expected SATISFIABLE"
             total_time += execution_time
 
         average_time = total_time / num_of_tests
         print()
-        print(f"Average execution time for satisfiable testset: {average_time} seconds")
+        print(f"Average execution time for satisfiable testset: {average_time:11f} seconds")
         
