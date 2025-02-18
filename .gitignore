@@ -8,6 +8,7 @@ __pycache__/
 
 # IDE and editor files
 .vscode/
+*.code-workspace
 
 # Log files
 *.log

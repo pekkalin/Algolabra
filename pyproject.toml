@@ -1,15 +1,12 @@
-[project]
+[tool.poetry]
 name = "algolabra"
 version = "0.9.9"
 description = "Tietorakenteet ja algoritmit -kurssin harjoitustyö"
-authors = [
-    {name = "Pekka Linna",email = "pekka.j.linna@helsinki.fi"}
-]
+authors = ["Pekka Linna <pekka.j.linna@helsinki.fi>"]
 readme = "README.md"
-requires-python = "^3.10"
-dependencies = [
-]
 
+[tool.poetry.dependencies]
+python = "^3.10"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
