@@ -33,5 +33,5 @@ class TestUnitUNSAT:
 
         average_time = total_time / num_of_tests
         print()
-        print(f"Average execution time for unsatisfiable testset: {average_time} seconds")
+        print(f"Average execution time for unsatisfiable testset: {average_time:11f} seconds")
         

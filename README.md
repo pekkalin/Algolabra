@@ -22,7 +22,7 @@ Run the program:
 - poetry run python main.py <DIMACS-tiedosto>
 
 Example:  
-- DIMACS-syötetiedosto (example.cnf):
+- DIMACS-inputfile (example.cnf):
 
 - poetry run python main.py example.cnf
 
@@ -48,7 +48,7 @@ cd test
 
     All tests at once:  
     - poetry run pytest -s  
-    
+
 
 
 

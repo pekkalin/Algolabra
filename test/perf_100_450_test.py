@@ -12,7 +12,7 @@ from satsolver import SATSolver
 @pytest.mark.parametrize("load_cnf_files", ["perf-tests/random-3-cnf-100-450"],indirect=True)
 class TestPerf:
     def test_dpll_performance(self, load_cnf_files):
-        print("Executing testset n=100, m=450:")
+        print("Executing perftest testset n=100, m=450:")
         for i, filename in enumerate(load_cnf_files.keys(), 1):
             print(f"{i}. {filename}")
         
@@ -26,11 +26,11 @@ class TestPerf:
             sat, sol = solver.solve()
             end_time = time.time()
             execution_time = end_time - start_time
-            print(f"Satisfiable: {sat}, Execution time for {filename}: {execution_time} seconds")
+            print(f"{'Satisfiable' if sat else 'Unsatisfiable'}, execution time for {filename}: {execution_time:.11f} seconds")
             print()
             total_time += execution_time
 
         average_time = total_time / num_of_tests
         print()
-        print(f"Average execution time for testset: {average_time} seconds")
+        print(f"Average execution time for testset n=100, m=450: {average_time:11f} seconds")
         
